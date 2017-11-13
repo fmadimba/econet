@@ -1,0 +1,102 @@
+$container:980px;
+
+body {
+    // background-color: $background;
+    // color: $font;
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+}
+
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    // color: $base;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    margin: 10px 0;
+    text-transform: uppercase;
+    
+    &.dark-header {
+        // color: $font;
+    }
+}
+
+
+h1 {
+    font-size: 4.375em;
+    @include breakpoint(mobile) {
+        font-size: 4em;
+    }
+}
+
+h2 {
+    font-size: 3.75em;
+    line-height: .75;
+    &.small {
+        font-size: 3em;
+        @include breakpoint(mobile) {
+            font-size: 2em;
+        }
+    }
+    @include breakpoint(tablet) {
+        font-size: 2em;
+    }
+    @include breakpoint(mobile) {
+        font-size: 1.75em;
+    }
+    @include breakpoint(desktop tablet mobile) {
+        line-height: 1;
+    }
+}
+
+h3 {
+    font-size: 1.75em;
+    @include breakpoint(mobile) {
+        //font-size: 1.125em; // who did this? melissa?
+        font-size: 1.5em;
+    }
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+p {
+    font-size: .938em;
+    line-height: 1.5em;
+    margin: 0 0 25px;
+    
+    &.last {
+        margin: 0;
+    }
+}
+
+.strong {
+    font-weight: 700;
+}
+
+a {
+    // color: $font;
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+}
+
+.clearboth {
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+}

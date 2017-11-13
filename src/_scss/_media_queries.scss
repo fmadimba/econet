@@ -1,0 +1,41 @@
+// keepin it simple with just 3 breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$extra: 860px;
+$desktop: 992px;
+$xl: 1200px;
+
+@mixin breakpoint($points){
+    @each $point in $points{
+        @include do_breakpoint(#{$point}) {
+            @content;
+        }
+    }
+}
+
+@mixin do_breakpoint($point){
+    @if $point == mobile {
+        //480 and below
+        @media (max-width: $mobile){ @content; }
+    }
+    @else if $point == tablet {
+        // 481 - 768
+         @media (min-width: $mobile + 1) and (max-width: $tablet) { @content; }
+    }
+    @else if $point == extra {
+        // 769 - 860
+         @media (min-width: $tablet + 1) and (max-width: $extra) { @content; }
+    }
+    @else if $point == desktop {
+        // 769 - 992
+        @media (min-width: $tablet + 1) and (max-width: $desktop){ @content; }
+    }
+    @else if $point == large {
+        // 993 - 1200
+        @media (min-width: $desktop + 1) and (max-width: $xl) { @content; }
+    }
+    @else if $point == xl {
+        // 1201 and above
+        @media (min-width: $xl + 1) { @content; }
+    }
+}

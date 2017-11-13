@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         },
         'http-server': {
             'dev': {
-                root: 'src/',
+                root: '',
                 port: 8282,
                 host: "0.0.0.0",
                 ext: "html",
@@ -31,9 +31,10 @@ module.exports = function(grunt) {
             },
             build: {
                 src: [
-                    'src/_js/econet.full.js'
+                    'src/_js/econet.full.js',
+                    'src/_js/carousel.js'
                 ],
-                dest: 'dist/js/<%= pkg.name %>.min.js'
+                dest: 'dist/js/econet/<%= pkg.name %>.min.js'
             }
         },
         sass: {
